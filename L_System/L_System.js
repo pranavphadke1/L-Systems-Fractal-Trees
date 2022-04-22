@@ -1,28 +1,22 @@
 var angle;
 var rules = [];
+var sentence;
+var axiom;
+var len;
 
-// Bent Tree
-var axiom = "F";
-var sentence = axiom;
-var len = 150;
-angle = 25;
-rules[0] = {
-  a : "F",
-  b : "FF+[+F-F-F]-[-F+F+F]"
-}
-
-//// Might not use
-//var axiom = "X";
-//var len = 300;
-//angle = degrees(30);
+//// Bent Tree
+//axiom = "F";
+//len = 150;
+//angle = 25;
 //rules[0] = {
-//  a : "X",
-//  b : "F[-X][+F]"
+//  a : "F",
+//  b : "FF+[+F-F-F]-[-F+F+F]"
 //}
 
-//// Arrow Shape
-//var axiom = "X";
-//var len = 200;
+//// Arrow Weed
+//axiom = "X";
+//len = 250;
+//angle = 30;
 //rules[0] = {
 //  a : "F",
 //  b : "FF"
@@ -30,6 +24,43 @@ rules[0] = {
 //rules[1] = {
 //  a : "X",
 //  b : "F[+X][-X]FX"
+//}
+
+
+// Fuzzy Weed
+axiom = "X";
+len = 200;
+angle = 22.5;
+rules[0] = {
+  a : "F",
+  b : "FF"
+}
+rules[1] = {
+  a : "X",
+  b : "F-[[X]+X]+F[+FX]-X"
+}
+
+//// Twiggy Weed
+//axiom = "X";
+//len = 250;
+//angle = 25;
+//rules[0] = {
+//  a : "F",
+//  b : "FF"
+//}
+//rules[1] = {
+//  a : "X",
+//  b : "F[-X]F[-X]+X"
+//}
+
+
+//// Tall Seaweed
+//var axiom = "F";
+//var len = 50;
+//angle = 25;
+//rules[0] = {
+//  a : "F",
+//  b : "F[+F]F[-F]F"
 //}
 
 
@@ -89,6 +120,7 @@ function turtle(){
 function setup() {
   createCanvas(600,600);
   background(51);
+  sentence = axiom;
   createP(axiom);
   angle = radians(angle);
   turtle();
